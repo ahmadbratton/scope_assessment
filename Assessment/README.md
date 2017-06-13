@@ -15,15 +15,14 @@ function (){
 }
 
 #### Hoisting:
-function(){
-    var top = "under"
-}
-due to hoisting will read
-function(){
-    var top;
-    top = "under'
+function hoist(){
+    
+
+    var top = function(){};
 }
 
+hoist();
+the var top has been hoisted but not var top = function(){}; so when hoist is called top is not assinged.
 
 #### Compartmentalization:
 

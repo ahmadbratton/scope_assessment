@@ -123,7 +123,7 @@ Hoisting
 **************************************************************************************/
 (function(){
   "use strict";
-  var birthday = (1983, 3, 21);
+  var birthday = (1642723200);
   var date = new Date(birthday);
   
   
@@ -148,8 +148,9 @@ Date object
 **************************************************************************************/
 (function(testerTwo){
   "use strict";
-  var today = new Date();
-  let stringDate = "June 12 2018";
+   let stringDate = "June 12, 2018";
+  var today = new Date(stringDate);
+ 
   console.log("#6 stringDate", stringDate)
   console.assert(stringDate == testerTwo, "#6 Test Failed. Did you set stringDate correctly?")
 })(testerTwo);
@@ -190,10 +191,11 @@ Hoisting
       }
     }
   }
+  
   pizza.sauceType = "tomato";
   pizza.protien = "chicken";
   pizza.orderNow = true;
-  pizza.sauceType = true;
+  pizza.sauce = true;
 pizza.pizzaMkr();
   console.log("# 7 pizza.pizzaMrk()", pizza.pizzaMkr());
   console.assert(pizza.pizzaMkr() == "We are making your pizza with tomato and chicken. Pickup in 20 minutes.", "#7 Test failed. Did you add the propeties? Did you set the values correctly? Did you fix the hoisting issues?")
@@ -237,6 +239,7 @@ HINTS:
 
 
   var accountCheck = function() {
+    name = James;
 
     var greeting = function() {
 
@@ -298,7 +301,7 @@ Compartmentalization
   var multiply = 2 * 8;
 
   (function duplicate() {
-    multiply = 2 * 10;
+   var multiply = 2 * 10;
   })();
 
  
