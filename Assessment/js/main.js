@@ -123,13 +123,11 @@ Hoisting
 **************************************************************************************/
 (function(){
   "use strict";
-  var birthday = (1642723200);
+  var birthday = 419749200000;
   var date = new Date(birthday);
-  
-  
   var bdayMsg = function(){
     return "You were born on " + date.toDateString();
-  }
+  };
   bdayMsg();
   console.log("#5 bdayMsg()", bdayMsg());
   console.assert(bdayMsg() == "You were born on Thu Apr 21 1983", "#5 Test failed. Check function hoisting." )
@@ -190,7 +188,7 @@ Hoisting
         return "We only make traditional pizzas. You gotta add some sauce!"
       }
     }
-  }
+  };
   
   pizza.sauceType = "tomato";
   pizza.protien = "chicken";
@@ -225,8 +223,8 @@ HINTS:
 (function() {
   "use strict";
 
-  var goodStanding = false;
-  var monthsActive = 2;
+  var goodStanding = true;
+  var monthsActive = 18;
   
   //Do not modify 'name' globaly.
   var name = null;
@@ -238,10 +236,10 @@ HINTS:
   benefit["discount"] = 5;
 
 
-  var accountCheck = function() {
+  accountCheck = function() {
     name = James;
 
-    var greeting = function() {
+     greeting = function() {
 
       return "Hello " + name + ". Here is the status of your account."
     }
